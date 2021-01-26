@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        margin: 50px;
+      }
+
+      .box img {
+        width: 300px;
+      }
+      .card {
+        position: relative;
+        transform-style: preserve-3d;
+        float: left;
+        margin: 10px 20px 20px;
+        width: 200px;
+        height: 250px;
+        /*height:400px;*/
+      }
+      .card.active {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+      }
+      .card.bingo {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+      }
+      .card img {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .front {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+      }
+      .back {
+      }
+      .transition {
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+      }
+      .box:hover {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body class="">
+    <div class="container">
+      <div id="position"></div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic1.jpg" alt="" />
+        </div>
+      </div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic2.jpg" alt="" />
+        </div>
+      </div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic1.jpg" alt="" />
+        </div>
+      </div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic2.jpg" alt="" />
+        </div>
+      </div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic3.jpg" alt="" />
+        </div>
+      </div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic4.jpg" alt="" />
+        </div>
+      </div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic5.jpg" alt="" />
+        </div>
+      </div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic3.jpg" alt="" />
+        </div>
+      </div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic4.jpg" alt="" />
+        </div>
+      </div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic5.jpg" alt="" />
+        </div>
+      </div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic6.jpg" alt="" />
+        </div>
+      </div>
+      <div class="card transition">
+        <div class="card_wrap">
+          <img class="back" src="images/card.jpg" />
+          <img class="front" src="images/pic6.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let cardLength = $(".container .card").length;
+
+      //洗牌
+      for (i = 0; i < cardLength; i++) {
+        let random = Math.floor(Math.random() * cardLength);
+        $(".container .card").eq(random).appendTo("#position");
+      }
+
+      //開牌
+      setTimeout(() => {
+        $(".card").addClass("active");
+      }, 100);
+      setTimeout(removeClass, 3000);
+
+      let card1 = "1";
+      let card2 = "2";
+      //點擊
+      $(".card").click(function () {
+        $(this).toggleClass("active");
+
+        //判斷
+        if ($(".container .active").length % 2 == 1) {
+          card1 = $(this).find("img.front").attr("src");
+          console.log("card1: " + card1);
+        } else {
+          card2 = $(this).find("img.front").attr("src");
+          console.log("card2: " + card2);
+          setTimeout(removeClass, 600);
+        }
+      });
+
+      function removeClass() {
+        if (card1 == card2) {
+          $(".container .active").addClass("bingo animate__shakeY");
+          $(".container .card").removeClass("active animate__shakeY");
+          //移除快速點擊導致的bug
+          if ($(".container .bingo").length % 2 == 1) {
+            $(".container .card").removeClass("bingo");
+          }
+        } else {
+          $(".container .card").removeClass("active");
+        }
+      }
+    </script>
+  </body>
+</html>
